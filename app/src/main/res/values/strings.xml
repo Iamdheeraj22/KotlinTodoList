@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Kotlin TodoList</string>
+    <string name="enter_note_title">Enter note title</string>
+</resources>

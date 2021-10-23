@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_Shade_1"
+    tools:context=".EditNoteActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_note_title"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/white"
+        android:id="@+id/et_title"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Write a description!"
+        android:id="@+id/et_description"
+        android:layout_margin="10dp"
+        android:layout_above="@id/button"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_below="@id/et_title"/>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button"
+        android:background="@drawable/custom_drawable"
+        android:textAllCaps="false" />
+
+
+</RelativeLayout>
