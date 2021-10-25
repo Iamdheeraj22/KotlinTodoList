@@ -12,18 +12,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInterface {
     private lateinit var notesRv:RecyclerView
     private lateinit var addFAB:FloatingActionButton
-    lateinit var viewModel: NotesViewModel
+    private lateinit var viewModel: NotesViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        viewModel=ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(NotesViewModel::class.java)
         notesRv=findViewById(R.id.recyclerView)
         addFAB=findViewById(R.id.floatingButton)
         notesRv.layoutManager= LinearLayoutManager(this)
 
         val noteAdapter = NotesAdapter(this,this,this)
         notesRv.adapter=noteAdapter
-        viewModel=ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(this.application)).get(NotesViewModel::class.java)
         viewModel.allNotes.observe(this,{list->
             list?.let {
                 noteAdapter.updateList(list)
